@@ -7,7 +7,7 @@ import numpy as np
 import load_data
 
 NPOINTS = 1000
-TOTAL_EPOCH = 100
+TOTAL_EPOCH = 50
 
 dataX, dataY = load_data.generate_data_for_linear_regression(NPOINTS)
 #dataY = np.reshape(dataY, [-1])
@@ -28,36 +28,46 @@ class Model(torch.nn.Module):
         return out
 
 
-m = Model()
-loss = torch.nn.MSELoss()
-optimizer = torch.optim.SGD(m.parameters(), lr=0.1)
+class Solver(object):
+    def __init__(self):
+        self.m = Model()
+        self.loss = torch.nn.MSELoss()
 
 
-#for graph
-arg_ = 0
-plt.figure(num=None, figsize=(8, 14), dpi=60, facecolor='w', edgecolor='k')
-plt.subplots_adjust(hspace=0.4, top=0.9, bottom=0.05)
-
-for epoch in range(TOTAL_EPOCH):
-    y_pred = m(x_train)
-    #y_pred = m.forward(x_data)
-    l = loss(y_pred, y_train)
-    if (epoch+1) % 10 == 0:
-        print("Epoch : {}, loss : {}".format(epoch+1, l.item()))
-
+    def train(self, x_train, y_train):
         # for graph
-        arg_ += 1
-        plt.subplot(5, 2, arg_)
-        plt.scatter(x_train.data, y_train.data, marker='.')
-        plt.plot(x_train.view(-1).data.numpy(), m(x_train).view(-1).data.numpy(), c='r')
-        plt.title('Epoch {}'.format(epoch + 1))
-        plt.grid()
-        plt.xlim(-2, 2)
+        arg_ = 0
+        plt.figure(num=None, figsize=(8, 14), dpi=60, facecolor='w', edgecolor='k')
+        plt.subplots_adjust(hspace=0.4, top=0.9, bottom=0.05)
 
-    optimizer.zero_grad()
-    l.backward()
-    optimizer.step()
+        for epoch in range(TOTAL_EPOCH):
+            y_pred = self.m(x_train)
+            # y_pred = m.forward(x_data)
+            l = self.loss(y_pred, y_train)
+            if (epoch + 1) % 5 == 0:
+                print("Epoch : {}, loss : {}".format(epoch + 1, l.item()))
 
-plt.suptitle('LinearRegression', fontsize=20)
-plt.savefig('./image/lab01-1_linear_regression_pytorch.jpg')
-plt.show()
+                # for graph
+                arg_ += 1
+                plt.subplot(5, 2, arg_)
+                plt.scatter(x_train.data, y_train.data, marker='.')
+                plt.plot(x_train.view(-1).data.numpy(), self.m(x_train).view(-1).data.numpy(), c='r')
+                plt.title('Epoch {}'.format(epoch + 1))
+                plt.grid()
+                plt.xlim(-2, 2)
+
+            self.optimizer.zero_grad()
+            l.backward()
+            self.optimizer.step()
+
+        plt.suptitle('LinearRegression', fontsize=20)
+        plt.savefig('./image/lab01-1_linear_regression.jpg')
+        plt.show()
+
+    @property
+    def optimizer(self):
+        return torch.optim.SGD(self.m.parameters(), lr=0.1)
+
+
+solver = Solver()
+solver.train(x_train, y_train)
