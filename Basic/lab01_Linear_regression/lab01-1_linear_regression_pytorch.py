@@ -64,6 +64,7 @@ class Solver(object):
         plt.savefig('./image/lab01-1_linear_regression.jpg')
         plt.show()
 
+        
     @property
     def optimizer(self):
         return torch.optim.SGD(self.m.parameters(), lr=0.1)
