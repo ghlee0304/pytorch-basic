@@ -59,5 +59,5 @@ for epoch in range(TOTAL_EPOCH):
     optimizer.step()
 
 plt.suptitle('LinearRegression', fontsize=20)
-plt.savefig('./image/lab01-1_linear_regression.jpg')
+plt.savefig('./image/lab01-1_linear_regression_pytorch.jpg')
 plt.show()
