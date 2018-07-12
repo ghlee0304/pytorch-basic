@@ -1,1 +1,3 @@
-compartion between tensorflow and pytorch
+<p align="center"><img width="40%" src="image/image1.JPG" /></p>
+
+--------------------------------------------------------------------------------
