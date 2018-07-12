@@ -6,7 +6,7 @@
 - Terry TaeWoong Um, https://www.youtube.com/watch?v=tNWatDufzDk
 
 ### book
-- Tom Hope, "Learning Tensorflow"
+- Tom Hope, ["Learning Tensorflow"](https://www.amazon.com/Learning-TensorFlow-Guide-Building-Systems/dp/9352136101)
 
 ### github
 - Sunghun Kim, https://github.com/hunkim/PyTorchZeroToAll
