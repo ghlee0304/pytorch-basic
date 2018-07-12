@@ -13,10 +13,12 @@ y_train = Variable(data=torch.FloatTensor(y_data), requires_grad=False)
 #parameter setting
 TOTAL_EPOCH = 1000
 
+
 def weight_init(layer):
     layer.weight.data.normal_(0.0, 0.02).clamp_(min=-2.0, max=2.0)
     layer.bias.data.fill_(0)
 
+          
 class Model(torch.nn.Module):
     def __init__(self):
         torch.manual_seed(0)
@@ -38,6 +40,7 @@ class Solver(object):
     def __init__(self):
         self.m = Model()
 
+
     def fit(self, x_train, y_train):
         for epoch in range(TOTAL_EPOCH):
             y_pred = self.m(x_train)
@@ -50,12 +53,15 @@ class Solver(object):
             loss.backward()
             self.optimizer.step()
 
+                    
     def predict(self, x_test):
         return self.m(x_test)
+
 
     @property
     def loss(self):
         return torch.nn.MSELoss()
+
 
     @property
     def optimizer(self):
@@ -73,4 +79,6 @@ def main():
     print("\n<<< 실제 값 >>>")
     print(y_train.data.numpy())
 
-main()
+
+if __name__ == "__main__":
+    main()
