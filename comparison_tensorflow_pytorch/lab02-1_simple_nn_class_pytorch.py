@@ -77,4 +77,6 @@ def main():
     print("\n<<< 실제 값 >>>")
     print(y_train.data.numpy())
 
-main()
+
+if __name__ == "__main__":
+    main()
