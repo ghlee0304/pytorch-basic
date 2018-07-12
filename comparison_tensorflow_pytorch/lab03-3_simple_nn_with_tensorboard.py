@@ -15,6 +15,7 @@ TOTAL_EPOCH = 1000
 BOARD_PATH = "./board"
 shutil.rmtree(BOARD_PATH)
 
+
 def Linear(x, output_size, name):
     input_size=x.get_shape().as_list()
     with tf.variable_scope(name):
@@ -25,6 +26,7 @@ def Linear(x, output_size, name):
                             initializer=tf.zeros_initializer())
         h = tf.nn.bias_add(tf.matmul(x, W), b)
     return h, W, b
+
 
 def ReLU(x, output_size, name):
     input_size = x.get_shape().as_list()
@@ -37,11 +39,13 @@ def ReLU(x, output_size, name):
         h = tf.nn.bias_add(tf.matmul(x, W), b)
     return tf.nn.relu(h), W, b
 
+
 class Model(object):
     def __init__(self, sess):
         tf.set_random_seed(0)
         self.build_net()
         self.sess = sess
+
 
     def build_net(self):
         self.X = tf.placeholder(tf.float32, [None, 4], name='X')
@@ -62,6 +66,7 @@ class Model(object):
 
         self.merged = tf.summary.merge_all()
 
+
     def fit(self, x_train, y_train):
         init_op = tf.global_variables_initializer()
         self.sess.run(init_op)
@@ -78,15 +83,18 @@ class Model(object):
     def predict(self, x_test):
         return self.sess.run(self.layer2, feed_dict={self.X: x_test})
 
+
     @property
     def optimizer(self):
         return tf.train.GradientDescentOptimizer(0.001).minimize(self.loss)
+
 
     @property
     def loss(self):
         with tf.variable_scope("Loss"):
             _loss = tf.reduce_mean(tf.square(self.Y-self.layer2), name='_loss')
         return _loss
+
 
     @property
     def writer(self):
@@ -105,4 +113,6 @@ def main():
     print("\n<<< 실제 값 >>>")
     print(y_train)
 
-main()
+          
+main()if __name__ == "__main__":
+    main()
