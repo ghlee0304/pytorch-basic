@@ -17,7 +17,6 @@
 - Visdom real time reference,  https://udacity.github.io/udacidrone/docs/visdom-tutorial.html
 
 ### PPT
-<p align="center"><img width="100%" src="image/슬라이드1.PNG" /></p>
 <p align="center"><img width="100%" src="image/슬라이드2.PNG" /></p>
 <p align="center"><img width="100%" src="image/슬라이드3.PNG" /></p>
 <p align="center"><img width="100%" src="image/슬라이드4.PNG" /></p>
