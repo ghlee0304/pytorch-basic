@@ -27,17 +27,13 @@
 <p align="center"><img width="100%" src="image/슬라이드8.PNG" /></p>
 <p align="center"><img width="100%" src="image/슬라이드9.PNG" /></p>
 <p align="center"><img width="100%" src="image/슬라이드10.PNG" /></p>
-<p align="center"><img width="100%" src="image/슬라이드11.PNG" /></p>
 <p align="center"><img width="100%" src="image/슬라이드12.PNG" /></p>
 <p align="center"><img width="100%" src="image/슬라이드13.PNG" /></p>
 <p align="center"><img width="100%" src="image/슬라이드14.PNG" /></p>
 <p align="center"><img width="100%" src="image/슬라이드15.PNG" /></p>
 <p align="center"><img width="100%" src="image/슬라이드16.PNG" /></p>
-<p align="center"><img width="100%" src="image/슬라이드17.PNG" /></p>
 <p align="center"><img width="100%" src="image/슬라이드18.PNG" /></p>
 <p align="center"><img width="100%" src="image/슬라이드19.PNG" /></p>
 <p align="center"><img width="100%" src="image/슬라이드20.PNG" /></p>
 <p align="center"><img width="100%" src="image/슬라이드21.PNG" /></p>
-<p align="center"><img width="100%" src="image/슬라이드22.PNG" /></p>
 <p align="center"><img width="100%" src="image/슬라이드23.PNG" /></p>
-<p align="center"><img width="100%" src="image/슬라이드24.PNG" /></p>
