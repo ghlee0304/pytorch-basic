@@ -41,7 +41,3 @@
 <p align="center"><img width="100%" src="image/슬라이드22.PNG" /></p>
 <p align="center"><img width="100%" src="image/슬라이드23.PNG" /></p>
 <p align="center"><img width="100%" src="image/슬라이드24.PNG" /></p>
-<p align="center"><img width="100%" src="image/슬라이드25.PNG" /></p>
-<p align="center"><img width="100%" src="image/슬라이드26.PNG" /></p>
-<p align="center"><img width="100%" src="image/슬라이드27.PNG" /></p>
-<p align="center"><img width="100%" src="image/슬라이드28.PNG" /></p>
