@@ -16,7 +16,7 @@ print(list(nn.Sequential(nn.Linear(10, 20), nn.ReLU()).named_modules()))
 print()
 print(list(nn.Sequential(nn.Linear(10, 20), nn.ReLU()).named_children()))
 print()
-
+# 결과에서 '0'하고 '1'이 이름인것 같음
 
 '''
 [Sequential(
