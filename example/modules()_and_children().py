@@ -10,6 +10,7 @@ model = list(nn.Sequential(nn.Linear(10, 20), nn.ReLU()).modules())[0]
 x = torch.FloatTensor([1,2,3,4,5,6,7,8,9,10])
 print(model(x))
 
+
 '''
 [Sequential(
   (0): Linear(in_features=10, out_features=20, bias=True)
